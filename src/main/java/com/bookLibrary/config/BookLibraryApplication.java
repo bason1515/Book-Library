@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan("com.bookLibrary.web")
+@ComponentScan(basePackages = { "com.bookLibrary.web", "com,bookLibrary.service" })
 public class BookLibraryApplication {
 
     public static void main(String[] args) {

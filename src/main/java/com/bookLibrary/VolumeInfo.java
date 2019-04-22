@@ -1,6 +1,9 @@
 package com.bookLibrary;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty.Access;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class VolumeInfo {
@@ -15,6 +18,7 @@ public class VolumeInfo {
     private String language;
     private String previewLink;
     private double averageRating;
+    private int ratingsCount;
     private String[] authors;
     private String[] categories;
 
@@ -128,6 +132,16 @@ public class VolumeInfo {
 
     public void setCategories(String[] categories) {
         this.categories = categories;
+    }
+
+    @JsonIgnore()
+    public int getRatingsCount() {
+        return ratingsCount;
+    }
+
+    @JsonProperty(access = Access.WRITE_ONLY)
+    public void setRatingsCount(int ratingsCount) {
+        this.ratingsCount = ratingsCount;
     }
 
 }

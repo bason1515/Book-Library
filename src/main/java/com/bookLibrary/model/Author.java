@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 //@JsonAutoDetect(fieldVisibility = Visibility.NONE)
 
-public class Author {
+public class Author implements Comparable<Author> {
     private String author;
     private double averageRating;
     @JsonIgnore
@@ -52,6 +52,15 @@ public class Author {
             result = this.author.equals(ptr.getAuthor());
         }
         return result;
+    }
+
+    @Override
+    public int compareTo(Author a) {
+        if (averageRating < a.getAverageRating())
+            return 1;
+        else if (a.getAverageRating() < averageRating)
+            return -1;
+        return 0;
     }
 
 }

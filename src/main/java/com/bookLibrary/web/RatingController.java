@@ -1,9 +1,13 @@
 package com.bookLibrary.web;
 
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -41,6 +45,7 @@ public class RatingController {
                 }
             }
         }
+        Collections.sort(authors);
         return ResponseEntity.ok().body(authors);
     }
 }

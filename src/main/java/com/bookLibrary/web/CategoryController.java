@@ -4,19 +4,16 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.bookLibrary.Item;
-import com.bookLibrary.Library;
-import com.bookLibrary.VolumeInfo;
+import com.bookLibrary.model.Item;
+import com.bookLibrary.model.Library;
+import com.bookLibrary.model.VolumeInfo;
 import com.bookLibrary.service.MapperService;
 
 @RestController

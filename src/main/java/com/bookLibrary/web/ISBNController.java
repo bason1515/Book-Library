@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.bookLibrary.Item;
-import com.bookLibrary.Library;
-import com.bookLibrary.VolumeInfo;
+import com.bookLibrary.model.Item;
+import com.bookLibrary.model.Library;
+import com.bookLibrary.model.VolumeInfo;
 import com.bookLibrary.service.MapperService;
 
 @RestController

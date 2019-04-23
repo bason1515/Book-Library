@@ -27,7 +27,8 @@ public class ISBNController {
         String jsonData = new String(Files.readAllBytes(Paths.get("books.json")));
         Library library = mapperService.fromJson(jsonData, Library.class);
         for (Item book : library.getItems()) {
-            if (book.getVolumeInfo().haveISBN(isbn)) {
+            System.out.println(book.getId() + " " + book.getVolumeInfo().getTitle());
+            if (book.haveISBN(isbn)) {
                 return new ResponseEntity<VolumeInfo>(book.getVolumeInfo(), HttpStatus.OK);
             }
         }

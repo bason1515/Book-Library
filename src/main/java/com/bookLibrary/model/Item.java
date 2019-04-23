@@ -15,7 +15,6 @@ public class Item {
             this.getVolumeInfo().setIsbn(this.id);
             return true;
         }
-        System.out.println(volumeInfo.getIndustryIdentifiers());
         for (IndustryIdentifiers id : this.volumeInfo.getIndustryIdentifiers()) {
             if (id.getType().equals("ISBN_13") && id.getIdentifier().equals(isbn)) {
                 this.getVolumeInfo().setIsbn(id.getIdentifier());

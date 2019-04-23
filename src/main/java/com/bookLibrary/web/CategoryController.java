@@ -33,7 +33,6 @@ public class CategoryController {
                 for (String bookCategory : book.getVolumeInfo().getCategories()) {
                     if (bookCategory.equals(category)) {
                         result.add(book.getVolumeInfo());
-                        System.out.println("Added: " + book.getVolumeInfo().getTitle());
                         break;
                     }
                 }

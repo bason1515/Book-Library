@@ -7,7 +7,10 @@ import com.fasterxml.jackson.annotation.JsonProperty.Access;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class VolumeInfo {
+    @JsonProperty(access = Access.WRITE_ONLY)
     private IndustryIdentifiers[] industryIdentifiers;
+    @JsonProperty(access = Access.READ_ONLY)
+    private String isbn;
     private String title;
     private String subtitle;
     private String publisher;
@@ -24,14 +27,6 @@ public class VolumeInfo {
 
     public IndustryIdentifiers[] getIndustryIdentifiers() {
         return industryIdentifiers;
-    }
-
-    public boolean haveISBN(String isbn) {
-        for (IndustryIdentifiers id : industryIdentifiers) {
-            if (id.getIdentifier().equals(isbn))
-                return true;
-        }
-        return false;
     }
 
     public String getTitle() {
@@ -142,6 +137,14 @@ public class VolumeInfo {
     @JsonProperty(access = Access.WRITE_ONLY)
     public void setRatingsCount(int ratingsCount) {
         this.ratingsCount = ratingsCount;
+    }
+
+    public String getIsbn() {
+        return isbn;
+    }
+
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
     }
 
 }
